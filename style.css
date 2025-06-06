@@ -1,0 +1,52 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+  background-color: #f9f9f9;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+form {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  display: grid;
+  gap: 1rem;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  background-color: #0072c6;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+section#summary {
+  margin-top: 2rem;
+}
+
+#bill-list {
+  list-style: none;
+  padding: 0;
+}
+
+#bill-list li {
+  background: white;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
