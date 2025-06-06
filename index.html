@@ -10,8 +10,26 @@
     <h1>BILL</h1>
     <p>Know how much money you need – and who you need to update.</p>
   </header>
-
   <main>
+    <section id="payday-setup">
+  <h2>Your Pay Cycle</h2>
+  <form id="payday-form">
+    <label>
+      Frequency:
+      <select id="pay-frequency" required>
+        <option value="weekly">Weekly</option>
+        <option value="fortnightly">Fortnightly</option>
+        <option value="monthly">Monthly</option>
+      </select>
+    </label>
+    <label>
+      Next Payday:
+      <input type="date" id="next-payday" required>
+    </label>
+    <button type="submit">Save Pay Cycle</button>
+  </form>
+</section>
+
     <form id="bill-form">
       <label>
         Bill Name:
