@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BILL MVP</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>BILL</h1>
+    <p>Know how much money you need – and who you need to update.</p>
+  </header>
+
+  <main>
+    <form id="bill-form">
+      <label>
+        Bill Name:
+        <input type="text" id="bill-name" required>
+      </label>
+      <label>
+        Amount ($):
+        <input type="number" id="bill-amount" required>
+      </label>
+      <label>
+        Frequency:
+        <select id="bill-frequency" required>
+          <option value="weekly">Weekly</option>
+          <option value="fortnightly">Fortnightly</option>
+          <option value="monthly">Monthly</option>
+        </select>
+      </label>
+      <label>
+        Next Due Date:
+        <input type="date" id="bill-date" required>
+      </label>
+      <button type="submit">Add Bill</button>
+    </form>
+
+    <section id="summary">
+      <h2>Upcoming Bills</h2>
+      <ul id="bill-list"></ul>
+      <p><strong>Total Due This Cycle: $<span id="total">0.00</span></strong></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
