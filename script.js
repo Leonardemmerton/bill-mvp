@@ -4,6 +4,12 @@ const totalDisplay = document.getElementById('total');
 const clearButton = document.getElementById('clear-bills');
 
 let bills = JSON.parse(localStorage.getItem('bills')) || [];
+let paySettings = JSON.parse(localStorage.getItem('paySettings')) || null;
+
+function savePaySettings(freq, date) {
+  paySettings = { frequency: freq, nextPayday: date };
+  localStorage.setItem('paySettings', JSON.stringify(paySettings));
+}
 
 function saveAndReload() {
   localStorage.setItem('bills', JSON.stringify(bills));
@@ -102,3 +108,15 @@ document.getElementById('generate-checklist').addEventListener('click', () => {
 
   checklist.style.display = 'block';
 });
+// Handle payday form
+const paydayForm = document.getElementById('payday-form');
+if (paydayForm) {
+  paydayForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const frequency = document.getElementById('pay-frequency').value;
+    const nextPayday = document.getElementById('next-payday').value;
+    savePaySettings(frequency, nextPayday);
+    alert('Pay cycle saved!');
+    loadBills();
+  });
+}
