@@ -73,3 +73,10 @@ li span.delete {
   margin: 0.25rem 0;
   border-left: 4px solid #0072c6;
 }
+#payday-setup {
+  background: #fff;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
