@@ -50,3 +50,16 @@ section#summary {
   border-radius: 6px;
   box-shadow: 0 0 5px rgba(0,0,0,0.05);
 }
+li span.delete {
+  float: right;
+  color: red;
+  cursor: pointer;
+}
+
+.actions {
+  margin-top: 1rem;
+}
+
+#clear-bills {
+  background-color: #d9534f;
+}
