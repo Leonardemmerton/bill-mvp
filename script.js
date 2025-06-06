@@ -62,3 +62,43 @@ clearButton.addEventListener('click', () => {
 
 // Initial load
 loadBills();
+// Export to CSV
+document.getElementById('export-csv').addEventListener('click', () => {
+  if (bills.length === 0) {
+    alert('No bills to export.');
+    return;
+  }
+
+  const headers = ['Name', 'Amount', 'Frequency', 'Due Date'];
+  const rows = bills.map(b => [b.name, b.amount, b.frequency, b.dueDate]);
+  const csv = [headers, ...rows].map(row => row.join(',')).join('\n');
+
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'bills.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+// Generate Move House Checklist
+document.getElementById('generate-checklist').addEventListener('click', () => {
+  const checklist = document.getElementById('checklist');
+  const output = document.getElementById('checklist-output');
+  output.innerHTML = '';
+
+  const uniqueNames = [...new Set(bills.map(b => b.name.trim()))];
+
+  if (uniqueNames.length === 0) {
+    output.innerHTML = '<li>No billers found.</li>';
+  } else {
+    uniqueNames.forEach(name => {
+      const li = document.createElement('li');
+      li.textContent = `Update your details with: ${name}`;
+      output.appendChild(li);
+    });
+  }
+
+  checklist.style.display = 'block';
+});
